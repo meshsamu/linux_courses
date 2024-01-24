@@ -2,7 +2,7 @@
 
 package=tmux
 
-sudo apt install $package
+sudo apt install $package >> package_install_results.log
 
 if [ $? -eq 0 ]
 then
@@ -11,4 +11,5 @@ then
    which $package
 else
    echo "$package failed to install"
+   echo "$package failed to isntall " >> package_install_failed.log
 fi
